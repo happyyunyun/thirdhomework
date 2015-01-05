@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>
+        唯美图 - 优美图片
+      </title>
+      <meta charset="UTF-8"></meta>
+      <link rel="stylesheet" type="text/css" href="zuoye.css"/>
+      <link rel="shortcut icon" href="img/heart.jpg" />
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-inner">
+        <div id="inner">
+          <div id="logo">
+            <a href="http://www.topit.me"/>
+              <img src="img/logo.gif"></img>
+            </a>
+          </div>
+          <div id="menu">
+            <a  href="http://rc.qzone.qq.com/photo">图片</a>
+            <a  href="http://www.56.com/w35/album-aid-12205662.html">专辑</a>
+            <a  href="http://user.qzone.qq.com/605433993/2">文章</a>
+            <a  href="http://5sing.kugou.com/1399000/default.html">歌曲</a>
+            <a  href="http://www.renren.com/467323018/profile">社区</a>
+            <a  href="http://www.nuandao.com/?utm_campaign=campaign1utm_medium=bannerutm_source=media_topitme">精品</a>
+            <a  href="http://www.topit.me/apps">手机</a>
+          </div>
+          <div id="loguser">
+            <ul id="nolog">
+              <li>
+                <big>
+                  <strong>
+                    <a href="http://www.topit.me/login">登录</a>
+                  </strong>
+                </big>
+              </li>
+              <li>
+                <big>
+                  <strong>
+                    <a href="http://www.topit.me/join">注册</a>
+                  </strong>
+                </big>
+              </li>
+            </ul>
+          </div>
+        </div>     
+              <div id="flex-viewport">
+                <ul id="slides">
+                  <li id="hide">
+                    <a href="http://www.yetang.com/sale/3713" >
+                      <img src="img/c1.jpg">
+                    </a>
+                  </li>
+                  <li id="hide">
+                    <a href="http://www.yetang.com/sale/3715" >
+                      <img src="img/c2.jpg">
+                    </a>
+                  </li>
+                  <li id="hide">
+                    <a href="http://www.yetang.com/sale/3755" >
+                      <img src="img/c3.jpg">
+                    </a>
+                  </li>
+                </ul>
+                <div id="direction">
+        <ul class="flex-direction-nav">
+          <li>
+            <a id="jiantouzuo" >Previous</a>
+          </li>
+          <li>
+            <a id="jiantouyou" >Next</a>
+          </li>
+        </ul>
+      </div>
+          
+                <ul id="flex-nav">
+                  <li>
+                    1
+                  </li>
+                  <li>
+                    2
+                  </li>
+                  <li>
+                    3
+                  </li>
+                </ul>
+              </div>
+      
+    <script>
+      var box=document.getElementById("flex-viewport");
+      var navs=document.getElementById("flex-nav").getElementsByTagName("li");
+      var images=document.getElementById("slides").getElementsByTagName("li");
+      var index=0;
+      for (var i=0; i<navs.length; i++) {
+        var navs_item=navs[i];
+        //navs[i].index=i;
+        navs_item.onclick=function() {
+          for (var s = 0; s < navs.length; s++) {
+            if (this.innerText==navs[s].innerText) {
+                index=s;
+                break;
+            };
+          };
+          for(var j=0;j<images.length;j++) {
+            images[j].style.display="none";
+            navs[j].className="";
+          }
+          images[index].style.display="";
+          navs[index].className="circle";
+        }
+      };
+      function appear()
+      {
+        for(var j=0;j<images.length;j++)
+        {
+          images[j].style.display="none";
+          navs[j].className="";
+        }
+        
+        images[index].style.display="";
+        navs[index].className="circle";
+        //alert(this.index);
+        index=index==images.length-1?0:index+1;
+      }
+      appear();
+      var auto=setInterval(appear,2000);
+      box.onmouseover=function(){
+        clearInterval(auto);
+      }
+      box.onmouseout=function(){
+        auto=setInterval(appear,2000);
+      }
+      var arrow=function(){
+        document.getElementById("direction").style.display="block";
+      }
+      var unarr=function(){
+        document.getElementById("direction").style.display="none";
+      }
+      function appear1(n){
+      
+      }
+      function arr(m){
+      for (var s = 0; s < navs.length; s++) {
+            if (images[s].style.display=="block") {
+                index=s;
+                break;
+            };
+          };
+      if(!m){
+        index++;
+        if(index>(images.length-1)){index=0;}
+      }
+      else{
+        index--;
+        if(index<0){index=images.length-1;}
+      }
+      //appear1(index);
+      for(var j=0;j<images.length;j++){
+        images[j].style.display="none";
+        navs[j].className="";
+      }
+      images[index].style.display="block";
+      navs[index].className="circle";
+      }
+      jiantouzuo.onclick=function(){arr(true);}
+      jiantouyou.onclick=function(){arr(false);}
+        
+    </script> 
+
+        <div class="clear"></div> 
+        <div id="wrapper">
+          <div id="wrapper-inner">
+            <div id="canvas">
+              <div id="content">
+                <div class="pageheader">
+                  <h2>最新推荐图片</h2>
+                  <div class="right">
+                    <ul class="tabs">
+                      <li class="active">
+                        <a href="http://www.topit.me/">推荐</a>
+                      </li>
+                      <li>
+                        <a href="http://www.topit.me/pop">热门</a>
+                      </li>
+                      <li>
+                        <a href="http://www.topit.me/dashboard">关注</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="catalog">
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/19387788">
+                      <img class="img" src="img/a.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/56433">
+                      <img class="img" src="img/g.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/5987815">
+                      <img class="img" src="img/c.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/379285">
+                      <img class="img" src="img/d.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/8498328">
+                      <img class="img" src="img/e.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/4917949">
+                      <img class="img" src="img/f.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/19387788">
+                      <img class="img" src="img/b.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/56433">
+                      <img class="img" src="img/h.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/5987815">
+                      <img class="img" src="img/i.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/379285">
+                      <img class="img" src="img/j.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/8498328">
+                      <img class="img" src="img/k.jpg" >
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/4917949">
+                      <img class="img" src="img/l.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/19387788">
+                      <img class="img" src="img/m.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/19387788">
+                      <img class="img" src="img/n.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/19387788">
+                      <img class="img" src="img/o.jpg" />
+                    </a>
+                  </div>
+                  <div class="e m">
+                    <a href="http://www.topit.me/item/19387788">
+                      <img class="img" src="img/r.jpg" />
+                    </a>
+                  </div>
+                  <div class="clear"></div>
+                  <div id="pagination">
+                    <div class="pages">
+                      <span class="current">1</span>
+                      <a href="http://www.topit.me/?p=2">2</a>
+                      <a href="http://www.topit.me/?p=3">3</a>
+                      <span class="dot">...</span>
+                      <a href="http://www.topit.me/?p=100">100</a>
+                      <a href="http://www.topit.me/?p=2">»</a>
+                      <form style="margin:0 0 0 20px;" method="get" action="http://www.topit.me/">去第
+                        <input id="page" class="page_number_input" type="text" value="1" name="p"/>页
+                        <input id="page_submit" type="submit" />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="sidebar">
+              <div id="search">
+                <form method="get" action="http://www.topit.me/items/search">
+                  <p>
+                    <input type="text" value="数之不尽的图片等你发掘！" name="query" id="query"/></input>
+                    <input type="submit" value="search" id="search_submit"/></input>
+                  </p>
+                </form>
+              </div>
+              <div class="box">
+                <a class="button" href="http://www.topit.me/home">
+                  <em class="icon_plus"></em>
+                  上传图片  
+                </a>
+              </div>
+              <div class="operbox">
+                <ul>
+                  <li>
+                    <a class="i_wall" href="http://www.topit.me/broad">全屏浏览</a>
+                  </li>
+                  <li>
+                    <a class="i_wall" href="http://www.topit.me/wall">3D浏览</a>
+                  </li>
+                  <div class="clear"></div>
+                </ul>
+                <div class="clear"></div>
+              </div>
+              <div class="box">
+                <div id="custom_02" style="width: 213px; height: 200px;">
+                  <a href="http://www.vjue.com/?hmsr=topit&amp;hmmd=pic&amp;hmpl=6-12&amp;hmkw=&amp;hmci=">
+                    <img src="img/jue.jpg">
+                  </a>
+                </div>
+              </div>
+              <div class="box">
+                <a class="button" href="http://www.topit.me/fashion/tags">
+                  <em class="icon_heart"></em>
+                  分类浏览</a>
+              </div>
+              <div class="box tags">
+                <ul>  
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%A4%B4%E5%83%8F">头像</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%A3%81%E7%BA%B8">壁纸</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%83%85%E4%BE%A3">情侣</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%89%8B%E7%BB%98">手绘</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E8%83%8C%E6%99%AF">背景</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/items/search?query=%E8%94%A1%E4%BE%9D%E6%9E%97">蔡依林</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%96%87%E5%AD%97">文字</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%A1%8C%E9%9D%A2">桌面</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%AC%A7%E7%BE%8E">欧美</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E8%8A%B1">花</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%8D%A1%E9%80%9A">卡通</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E7%BA%B9%E8%BA%AB">纹身</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%B9%B3%E9%93%BA">平铺</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E9%BB%91%E7%99%BD">黑白</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E7%8C%AB">猫</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%8A%A8%E6%BC%AB">动漫</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%A4%A7%E5%9B%BE">大图</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E7%9F%AD%E5%8F%91">短发</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%8F%A4%E9%A3%8E">古风</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%B0%B4%E5%BD%A9">水彩</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%98%9F%E7%A9%BA">星空</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E7%BE%8E%E5%A5%B3">美女</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E5%A9%9A%E7%BA%B1">婚纱</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E6%80%A7%E6%84%9F">性感</a>
+                  </li>
+                  <li>
+                    <a href="http://www.topit.me/tag/%E9%A3%8E%E6%99%AF">风景</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="box hearters">
+                <li>
+                  <a href="http://www.topit.me/user/1925288">
+                    <img title="؎.  Kiss，" class="u" src="img/aa.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/2543550">
+                    <img title="♡恬淡" class="u"  src="img/bb.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/728186">
+                    <img title="忆" class="u" src="img/cc.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/2674723">
+                    <img title="受气" class="u"  src="img/ii.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/88211">
+                    <img title="夜半未央" class="u"  src="img/ee.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/122561">
+                    <img title="若成" class="u"  src="img/ff.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/3020856">
+                    <img title="把心葬送寄给你" class="u"  src="img/gg.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/1457326">
+                    <img title="Cayke" class="u"  src="img/hh.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/1676519">
+                    <img title="XndWz" class="u"  src="img/dd.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/681842">
+                    <img title="For-Beloved-One" class="u"  src="img/jj.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/2964291">
+                    <img title="ange1a" class="u"  src="img/kk.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/2527613">
+                    <img title="嗲气" class="u"  src="img/ll.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/3213090">
+                    <img title="韦媽逼" class="u"  src="img/mm.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/30267">
+                    <img title="折葵" class="u" src="img/nn.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/110817">
+                    <img title="if__only" class="u"  src="img/oo.jpg">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.topit.me/user/979119">
+                    <img title="X1LE" class="u"  src="img/pp.jpg">
+                  </a>
+                </li>
+                <div class="clear"></div>
+              </div>
+              <div id="frame">
+                <div id="list">
+                  <div>
+                    <a href="http://www.topit.me/item/5987815">
+                      <img class="a"  src="img/11.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5987814">
+                      <img class="a"  src="img/22.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5987825">
+                      <img class="a"  src="img/33.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5986815">
+                      <img class="a"  src="img/44.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5989815">
+                      <img class="a"  src="img/555.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5887815">
+                      <img class="a"  src="img/66.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5987835">
+                      <img class="b"  src="img/aaa.jpg" />
+                    </a>
+                  </div>
+                  <div>
+                    <a href="http://www.topit.me/item/5987515">
+                      <img class="b"  src="img/bbb.jpg" />
+                    </a>
+                  </div>
+                </div>
+              </div> 
+              <div>
+                <a href="http://www.topit.me/item/5927815">
+                  <img class="c"  src="img/job.jpg" />
+                </a>
+              </div>
+               
+              <div class="box userinfo" style="margin: 0px;">
+                <p>广告投放QQ 429196802</p>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div id="footer">
+            <div id="footer-inner">
+              <a href="http://www.topit.me/help">关于我们</a>
+              <a href="http://www.topit.me/help">广告投放</a>
+              <a href="http://www.topit.me/help/guide">使用向导</a>
+              <a href="http://www.topit.me/user/1/comments">意见反馈</a>
+              <a href="http://www.topit.me/help/tool">
+                <font color="red">收录工具</font>
+              </a>
+              <a href="http://www.topit.me/help/rule">服务条款</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© topit.me
+              <a href="http://www.miibeian.gov.cn/">京ICP备09107066号</a>&nbsp;&nbsp;京公网安备110105010553<br><br>
+              
+              
+              <a href="http://www.topit.me/popular" >热门图片</a>
+              <a href="http://www.topit.me">友情链接</a>
+              <a href="http://www.netbian.com" >壁纸</a>
+              <a href="http://fan.yoka.com" >Fan.YOKA</a>
+              <a href="http://www.renhe.gov.cn/" >百家人和</a>
+              <a href="http://meilishuo.com" >美丽说</a>
+              <a href="http://www.kfcha.com" >功夫茶</a>
+              <a href="http://50tu.com" >美女图</a>
+              <a href="http://www.zdapei.com" >服装搭配</a>
+              <a href="http://www.bomoda.com/" >摩登系bomoda</a>
+              <a href="http://www.ttsucai.com/" >天天素材</a>
+              <a href="http://www.aiba.com">爱吧</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </body>
+</html> 
